@@ -1,10 +1,25 @@
-import { getFetch } from "@/config/axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getData } from "@/config/axios";
+import { queryGet } from "@/config/tanstack";
 
-function Todos() {
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["posts"], // Unique key to identify the query
-    queryFn: getFetch("https://67542b5836bcd1eec8506977.mockapi.io/user"), // Function to fetch data
+const Todos = () => {
+  const query = queryGet(["todos"], async () => {
+    const res = await getData(
+      "https://67542b5836bcd1eec8506977.mockapi.io/user"
+    );
+    return res.data;
   });
-  return <div></div>;
-}
+
+  if (query.isLoading) return <div>Loading...</div>;
+  if (query.isError) return <div>Error: {query.error.message}</div>;
+  return (
+    <div>
+      <ul>
+        {query.data?.map((user: any) => (
+          <li key={user.id}>{user.testname}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Todos;
