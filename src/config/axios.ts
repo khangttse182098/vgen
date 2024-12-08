@@ -5,7 +5,10 @@ const api = axios.create({
 });
 
 export const getData = (url: string) => {
-  return api.get(url);
+  return async () => {
+    const res = await api.get(url);
+    return res.data;
+  };
 };
 
 export const createData = (url: string, data: object) => {

@@ -1,12 +1,24 @@
 "use client";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Todos from "./todo/page";
+import { getData } from "@/config/axios";
+import { queryGet } from "@/config/tanstack";
 
-const queryClient = new QueryClient();
+interface TData {
+  testname: string;
+  id: string;
+}
 export default function Home() {
+  const { data, isError, isLoading } = queryGet<TData[]>(
+    ["user"],
+    getData("user")
+  );
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <Todos />
-    </QueryClientProvider>
+    <div>
+      {data?.map((item: TData) => (
+        <div key={item.id}>{item.testname}</div>
+      ))}
+    </div>
   );
 }
