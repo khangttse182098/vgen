@@ -1,0 +1,29 @@
+@import "../../scss/variables";
+@import "../../scss/font";
+
+.header {
+  width: 100vw;
+  height: 75px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ebebeb;
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    &__image {
+      width: 75px;
+      height: 75px;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__name {
+      font-size: 20px;
+      font-family: $nexa-font;
+      color: map-get($colors, "primary");
+    }
+  }
+}
