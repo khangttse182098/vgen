@@ -2,6 +2,8 @@
 @import "../../scss/font";
 
 .header {
+  display: flex;
+  justify-content: space-between;
   width: 100vw;
   height: 75px;
   background-color: #ffffff;
@@ -24,6 +26,16 @@
       font-size: 20px;
       font-family: $nexa-font;
       color: map-get($colors, "primary");
+    }
+  }
+  &__tab {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    list-style-type: none;
+    & a {
+      text-decoration: none;
+      color: #4b584b;
     }
   }
 }

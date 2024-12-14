@@ -10,6 +10,11 @@ const Header = () => {
           V.Gen Network for Vietnam
         </h1>
       </div>
+      <ul className={`${style["header__tab"]}`}>
+        <a href="#">Bài viết</a>
+        <a href="#">Giới thiệu</a>
+        <a href="#">Dự án giáo dục</a>
+      </ul>
     </nav>
   );
 };
