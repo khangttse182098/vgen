@@ -5,4 +5,12 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "inter";
+  src: url("/font/Inter-VariableFont_opsz,wght.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 $nexa-font: "nexa-bold", san-serif;
+$inter-font: "inter", san-serif;

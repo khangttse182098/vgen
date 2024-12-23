@@ -1,4 +1,9 @@
+import Link from "next/link";
 import style from "./Header.module.scss";
+import { BiSearch } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
+import { IoMdNotificationsOutline } from "react-icons/io";
+
 const Header = () => {
   return (
     <nav className={`${style["header"]}`}>
@@ -11,9 +16,20 @@ const Header = () => {
         </h1>
       </div>
       <ul className={`${style["header__tab"]}`}>
-        <a href="#">Bài viết</a>
-        <a href="#">Giới thiệu</a>
-        <a href="#">Dự án giáo dục</a>
+        <Link href="#">Bài viết</Link>
+        <Link href="#">Giới thiệu</Link>
+        <Link href="#">Dự án giáo dục</Link>
+      </ul>
+      <ul className={`${style["header__button"]}`}>
+        <Link href="#">
+          <BiSearch size={30} />
+        </Link>
+        <Link href="#">
+          <AiOutlineUser size={30} />
+        </Link>
+        <Link href="#">
+          <IoMdNotificationsOutline size={30} />
+        </Link>
       </ul>
     </nav>
   );
