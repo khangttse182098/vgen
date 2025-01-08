@@ -1,0 +1,61 @@
+.container {
+  width: 584px;
+  height: 138.5px;
+  border: 2px solid black;
+  display: flex;
+
+  &__image {
+    flex: 1;
+    // width: 280px;
+    height: 100%;
+    object-fit: cover;
+    object-position: 60% 15%;
+    border-radius: 5.5px;
+    margin-right: 16px;
+  }
+
+  &__content {
+    flex: 1;
+
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &__description {
+      font-size: 14px;
+      color: #323232;
+    }
+
+    &__author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__info {
+        display: flex;
+        align-items: center;
+      }
+
+      &__imageAuthor {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+      }
+
+      &__name {
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      &__date {
+        font-weight: normal;
+      }
+
+      &__like {
+        color: map-get($colors, "heart");
+      }
+    }
+  }
+}
