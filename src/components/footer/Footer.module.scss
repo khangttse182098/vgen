@@ -1,17 +1,43 @@
+@mixin footer__section($name) {
+  &__#{$name} {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__title {
+      font-size: var(--footer__section__title);
+      font-weight: 800;
+    }
+    &__content {
+      font-size: var(--footer__section__content);
+    }
+
+    @content;
+  }
+}
+
 .footer {
-  display: flex;
-  justify-content: space-between;
-  width: 100vw;
+  --footer__section__title: 15.84px;
+  --footer__section__content: 14.52px;
+  width: 95vw;
   height: 75px;
-  background-color: #ffffff;
-  border-bottom: 2px solid #ebebeb;
+  color: map-get($colors, "text");
+  font-family: $inter-font;
+  border-top: 2px solid #ebebeb;
+  margin: 0 auto;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 2% auto;
+  }
 
   &__brand {
     height: 100%;
 
     &__image {
-      width: 50px;
-      height: 50px;
+      width: 80px;
+      height: 80px;
 
       & img {
         width: 100%;
@@ -20,20 +46,21 @@
     }
   }
 
-  &__contact {
-  }
-
-  &__social {
+  @include footer__section(address);
+  @include footer__section(social) {
     a {
       text-decoration: none;
       color: map-get($colors, "text");
     }
+    li {
+      display: flex;
+      gap: 11;
+    }
   }
-
-  &__address {
-  }
+  @include footer__section(contact);
 
   ul {
     list-style-type: none;
+    padding: 0;
   }
 }
