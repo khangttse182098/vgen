@@ -22,13 +22,13 @@ const Header = () => {
       </ul>
       <ul className={`${style["header__button"]}`}>
         <Link href="#">
-          <BiSearch size={30} />
+          <BiSearch size={20} />
         </Link>
         <Link href="#">
-          <AiOutlineUser size={30} />
+          <AiOutlineUser size={20} />
         </Link>
         <Link href="#">
-          <IoMdNotificationsOutline size={30} />
+          <IoMdNotificationsOutline size={20} />
         </Link>
       </ul>
     </nav>
