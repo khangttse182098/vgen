@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import authorHau from "../../../public/img/authorHau.jpg";
-import examPic from "../../../public/img/bài viết mới mẫu 7.jpg";
+import authorHau from "../../../../../public/img/authorHau.jpg";
+import examPic from "../../../../../public/img/bài viết mới mẫu 7.jpg";
 import style from "./index.module.scss";
 import { useState } from "react";
 
