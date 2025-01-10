@@ -1,0 +1,26 @@
+.post {
+  &__outer__container {
+    width: 99%;
+    height: 600px;
+    background-color: map-get($colors, "white");
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+
+  &__inner__container {
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+
+  &__heading {
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  &__popular__container {
+    display: flex;
+    gap: 4%;
+  }
+}
