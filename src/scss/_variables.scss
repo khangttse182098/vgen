@@ -2,4 +2,11 @@ $colors: (
   "primary": #fab85b,
   "text": #323232,
   "heart": #d6d6d6,
+  "heartActive": #f83939,
+  "white": #ffffff,
+  "title": #0a415c,
 );
+
+body {
+  color: map-get($colors, "text");
+}
