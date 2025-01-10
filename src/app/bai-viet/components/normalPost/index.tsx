@@ -1,11 +1,17 @@
-import React from "react";
-import style from "./index.module.scss";
+"use client";
 import Image from "next/image";
-import examPic from "../../../public/img/bài viết mới mẫu 7.jpg";
-import authorHau from "../../../public/img/authorHau.jpg";
-import { CiHeart } from "react-icons/ci";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import authorHau from "../../../../../public/img/authorHau.jpg";
+import examPic from "../../../../../public/img/bài viết mới mẫu 7.jpg";
+import style from "./index.module.scss";
+import { useState } from "react";
 
 const Post = () => {
+  const [isLiked, setIsLiked] = useState(false);
+  const handleClick = () => {
+    setIsLiked(!isLiked);
+  };
+
   return (
     <div className={`${style["container"]}`}>
       <Image
@@ -39,7 +45,19 @@ const Post = () => {
               </div>
             </div>
           </div>
-          <CiHeart className={`${style["container__content__author__like"]}`} />
+          {isLiked ? (
+            <FaHeart
+              onClick={handleClick}
+              size={23}
+              className={`${style["container__content__author__likeSuccess"]}`}
+            />
+          ) : (
+            <FaRegHeart
+              onClick={handleClick}
+              size={23}
+              className={`${style["container__content__author__like"]}`}
+            />
+          )}
         </div>
       </div>
     </div>

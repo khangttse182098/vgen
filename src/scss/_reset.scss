@@ -65,3 +65,13 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar {
+}

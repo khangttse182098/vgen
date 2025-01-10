@@ -17,6 +17,7 @@
   }
 
   &info {
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -52,5 +53,14 @@
     &date {
       font-size: 9px;
     }
+  }
+
+  &like {
+    color: map-get($colors, "heart");
+    stroke-width: 0.5;
+    margin: auto 0;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
   }
 }

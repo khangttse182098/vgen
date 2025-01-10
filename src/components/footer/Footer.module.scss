@@ -19,12 +19,12 @@
   --footer__section__title: 15.84px;
   --footer__section__content: 14.52px;
   width: 95vw;
-  height: 75px;
+  height: 150px;
   color: map-get($colors, "text");
   font-family: $inter-font;
   border-top: 2px solid #ebebeb;
   margin: 0 auto;
-
+  margin-top: 30px;
   &__wrapper {
     display: flex;
     justify-content: space-between;

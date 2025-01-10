@@ -37,7 +37,7 @@ const PopularPost = ({
               {date}
             </div>
           </div>
-          <CiHeart />
+          <CiHeart className={`${style["popular__post__like"]}`} />
         </div>
       </div>
     </div>
