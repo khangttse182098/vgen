@@ -22,7 +22,7 @@
 
     &__description {
       font-size: 10px;
-      color: #323232;
+      color: map-get($colors, "text");
       margin-top: 10px;
     }
 

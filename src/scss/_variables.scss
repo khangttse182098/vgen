@@ -7,6 +7,13 @@ $colors: (
   "title": #0a415c,
 );
 
+$box-shadow-value: 0px 1.98px 2.64px lighten(#94a3b8, 30%);
+
+.text {
+  font-size: 9px;
+  font-weight: 650;
+}
+
 body {
   color: map-get($colors, "text");
 }

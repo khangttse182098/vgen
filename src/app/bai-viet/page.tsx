@@ -22,6 +22,7 @@ const PostPage = () => {
             <NormalPostList />
             <HighlightEvent />
             <NormalPostList />
+            <PopularAuthorList />
           </>
         }
       />

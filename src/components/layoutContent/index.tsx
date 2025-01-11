@@ -15,35 +15,25 @@ const LayoutContent = ({
   // layout cho trang bài viết
   if (layoutType === 1) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          borderRadius: "14px",
-          gap: "12px",
-          padding: "12px",
-        }}
-      >
-        <div
-          style={{
-            flex: 2,
-            backgroundColor: "#fff",
-            height: "auto",
-            padding: "12px",
-            borderRadius: "10px",
-          }}
-        >
+      <div className={`${style["layout__container"]}`}>
+        <div className={`${style["layout__container__content1"]}`}>
           {content1}
         </div>
-        <div
-          style={{
-            flex: 8,
-            backgroundColor: "#fff",
-            padding: "12px",
-            borderRadius: "10px",
-          }}
-        >
+        <div className={`${style["layout__container__content2"]}`}>
           {content2}
+        </div>
+      </div>
+    );
+  }
+  // layout cho trang bài viết
+  else if (layoutType === 2) {
+    return (
+      <div className={`${style["layout__container"]}`}>
+        <div className={`${style["layout__container__content2"]}`}>
+          {content1}
+        </div>
+        <div className={`${style["layout__container__content1"]}`}>
+          {content1}
         </div>
       </div>
     );
