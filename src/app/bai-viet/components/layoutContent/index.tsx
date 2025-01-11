@@ -21,6 +21,7 @@ const LayoutContent = ({
           flexDirection: "column",
           borderRadius: "14px",
           gap: "12px",
+          padding: "12px",
         }}
       >
         <div
