@@ -5,15 +5,22 @@ import HightlightPost from "./components/highlightPost/HightlightPost";
 import TopicList from "./components/topicList/TopicList";
 import PopularAuthorList from "./components/popularAuthorList/PopularAuthorList";
 import HighlightEvent from "./components/highlightEvent/HighlightEvent";
+import LayoutContent from "@/components/layoutContent";
+import MostPopularPost from "./components/mostPopularPost/MostPopularPost";
+import PopularPostList from "./components/popularPostList/PopularPostList";
 
 const PostPage = () => {
   return (
     <div>
-      <HightlightPost />
-      <Post />
-      <TopicList />
+      {/* <Post /> */}
+      {/* <TopicList />
       <HighlightEvent />
-      <PopularAuthorList />
+      <PopularAuthorList /> */}
+      <LayoutContent
+        layoutType={1}
+        content1={<HightlightPost />}
+        content2={<div>abc</div>}
+      />
     </div>
   );
 };

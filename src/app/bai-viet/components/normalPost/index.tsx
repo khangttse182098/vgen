@@ -41,7 +41,7 @@ const Post = () => {
             <div className={`${style["container__content__author__name"]}`}>
               <div>M Hau Nguyen</div>
               <div className={`${style["container__content__author__date"]}`}>
-                05 Thg 6
+                05 Thg 6  
               </div>
             </div>
           </div>
