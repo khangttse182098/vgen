@@ -1,8 +1,8 @@
 .post {
   &__outer__container {
     width: 99%;
-    height: 600px;
-    background-color: map-get($colors, "white");
+    height: auto;
+    // background-color: map-get($colors, "white");
     border-radius: 10px;
     margin: 0 auto;
     margin-top: 10px;

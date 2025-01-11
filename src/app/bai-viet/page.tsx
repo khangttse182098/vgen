@@ -19,13 +19,8 @@ const PostPage = () => {
       <PopularAuthorList /> */}
       <LayoutContent
         layoutType={1}
-        content1={
-          <div style={{ display: "flex" }}>
-            <MostPopularPost />
-            <PopularPostList />
-          </div>
-        }
-        content2={<div>ABC</div>}
+        content1={<HightlightPost />}
+        content2={<div>abc</div>}
       />
     </div>
   );
