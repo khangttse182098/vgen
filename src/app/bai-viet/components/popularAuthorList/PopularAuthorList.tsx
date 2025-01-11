@@ -9,11 +9,10 @@ const PopularAuthorList = () => {
       <div className={`${style["container"]}`}>
         <PopularAuthor image="authorHau" name="M Hau Nguyen" quantity={20} />
         <PopularAuthor image="authorHau" name="M Hau Nguyen" quantity={20} />
-        <PopularAuthor image="author1" name="M Hau Nguyen" quantity={20} />
-        <PopularAuthor image="author2" name="M Hau Nguyen" quantity={20} />
-        <PopularAuthor image="author1" name="M Hau Nguyen" quantity={20} />
-        <PopularAuthor image="author3" name="M Hau Nguyen" quantity={20} />
-        <PopularAuthor image="author3" name="M Hau Nguyen" quantity={20} />
+        <PopularAuthor image="author1" name="Võ Thuý An" quantity={20} />
+        <PopularAuthor image="author2" name="Nam Nguyen" quantity={20} />
+        <PopularAuthor image="author3" name="Hoài Hoài" quantity={20} />
+        <PopularAuthor image="author3" name="Hoài Hoài" quantity={20} />
       </div>
     </div>
   );
