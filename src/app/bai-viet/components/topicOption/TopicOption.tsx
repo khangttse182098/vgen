@@ -12,11 +12,11 @@ type TTopicOption = {
 const TopicOption = ({Icon, name}: TTopicOption) => {
     return (
         <>
-            <div className={`${style["option"]}`}>
-                <span className={`${style["circle"]}`}>
+            <div className={`${style["container"]}`}>
+                <span className={`${style["container__circle"]}`}>
                     <Icon />
                 </span>
-                <span className={`${style["text"]}`}>{name}</span>
+                <span className={`${style["container__text"]}`}>{name}</span>
             </div>
         </>
     )

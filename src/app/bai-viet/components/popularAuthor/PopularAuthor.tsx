@@ -16,29 +16,29 @@ const PopularAuthor = (props: any) => {
                     src={authorHau}
                    alt="AUTHOR PICTURE"
                    priority
-                   className={`${style["author_img"]}`}
+                   className={`${style["author__img"]}`}
                    />;
                 case 'author1':
                     return <Image
                     src={author1}
                    alt="AUTHOR PICTURE"
                    priority
-                   className={`${style["author_img"]}`}
+                   className={`${style["author__img"]}`}
                    />;
                 case 'author2':
                     return <Image
                     src={author2}
                    alt="AUTHOR PICTURE"
                    priority
-                   className={`${style["author_img"]}`}
+                   className={`${style["author__img"]}`}
                    />;
                 case 'author3':
                     return <Image
                     src={author3}
                    alt="AUTHOR PICTURE"
                    priority
-                   className={`${style["author_img"]}`}
-                   />;;
+                   className={`${style["author__img"]}`}
+                   />;
                 default:
                     return null; 
             }
@@ -50,8 +50,8 @@ const PopularAuthor = (props: any) => {
                 <div>
                 {renderAuthorImage()}
                 </div>
-                <p className={`${style["author_name"]}`}>{props.name}</p>
-                <p className={`${style["author_article"]}`}><GoPencil /> {props.quantity} bài viết</p>
+                <p className={`${style["container__author__name"]}`}>{props.name}</p>
+                <p className={`${style["container__author__article"]}`}><GoPencil /> {props.quantity} bài viết</p>
             </div>
             
         </>
