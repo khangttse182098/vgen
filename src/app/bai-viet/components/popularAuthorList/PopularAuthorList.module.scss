@@ -1,6 +1,18 @@
+.container__outer {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 95%;
+}
+
+.title {
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
 }

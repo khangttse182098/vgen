@@ -8,18 +8,23 @@ import HighlightEvent from "./components/highlightEvent/HighlightEvent";
 import LayoutContent from "@/components/layoutContent";
 import MostPopularPost from "./components/mostPopularPost/MostPopularPost";
 import PopularPostList from "./components/popularPostList/PopularPostList";
+import NormalPostList from "./components/normalPostList/NormalPostList";
 
 const PostPage = () => {
   return (
     <div>
-      {/* <Post /> */}
-      {/* <TopicList />
-      <HighlightEvent />
-      <PopularAuthorList /> */}
       <LayoutContent
         layoutType={1}
         content1={<HightlightPost />}
-        content2={<div>abc</div>}
+        content2={
+          <>
+            <TopicList />
+            <NormalPostList />
+            <HighlightEvent />
+            <NormalPostList />
+            <PopularAuthorList />
+          </>
+        }
       />
     </div>
   );

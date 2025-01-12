@@ -19,25 +19,21 @@ const PopularPost = ({
   title,
 }: TPopularPost) => {
   return (
-    <div className={`${style["popular__post__container"]}`}>
-      <div className={`${style["popular__post__image"]}`}>
+    <div className={`${style["post__container"]}`}>
+      <div className={`${style["post__image"]}`}>
         <Image src={postImg} alt="post-img" />
       </div>
-      <div className={`${style["popular__post__info"]}`}>
-        <div className={`${style["popular__post__title"]}`}>{title}</div>
-        <div className={`${style["popular__post__author__container"]}`}>
-          <div className={`${style["popular__post__author__image"]}`}>
+      <div className={`${style["post__info"]}`}>
+        <div className={`${style["post__title"]}`}>{title}</div>
+        <div className={`${style["post__author__container"]}`}>
+          <div className={`${style["post__author__image"]}`}>
             <Image src={authorImg} alt="author-img" />
           </div>
-          <div className={`${style["popular__post__author__info"]}`}>
-            <div className={`${style["popular__post__author__name"]}`}>
-              {name}
-            </div>
-            <div className={`${style["popular__post__author__date"]}`}>
-              {date}
-            </div>
+          <div className={`${style["post__author__info"]}`}>
+            <div className={`${style["post__author__name"]}`}>{name}</div>
+            <div className={`${style["post__author__date"]}`}>{date}</div>
           </div>
-          <CiHeart className={`${style["popular__post__like"]}`} />
+          <CiHeart className={`${style["post__like"]}`} />
         </div>
       </div>
     </div>

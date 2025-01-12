@@ -1,6 +1,7 @@
 $colors: (
   "primary": #fab85b,
   "text": #323232,
+  "black": #000000,
   "heart": #d6d6d6,
   "heartActive": #f83939,
   "white": #ffffff,
@@ -9,6 +10,10 @@ $colors: (
   "pink": #EE369D
 );
 
-body {
-  color: map-get($colors, "text");
+$box-shadow-value: 0px 1.98px 2.64px lighten(#94a3b8, 30%);
+$header-height: 50px;
+
+.text {
+  font-size: 9px;
+  font-weight: 650;
 }

@@ -1,0 +1,22 @@
+.container {
+  display: grid;
+  gap: 60px 66px;
+  grid-template-columns: auto auto auto;
+  padding: 30px;
+  height: 90%;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 55%;
+    &__header {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    border: 1px solid map-get($colors, "text");
+  }
+}

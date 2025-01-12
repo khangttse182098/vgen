@@ -1,29 +1,28 @@
-.container{
-    margin-left: 4px;
-    margin-right: 4px;
-    display: flex;
+.container {
+  margin-left: 4px;
+  margin-right: 4px;
+  display: flex;
+  color: map-get($colors, "text");
+  flex-direction: column;
+  align-items: center;
+  gap: 8;
+
+  &__circle {
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    background-color: white; /* Background color of the circle */
+    border-radius: 50%; /* Makes the shape a circle */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */ /* Sets the color of the icon */
+    font-size: 24px;
+    border: solid 2px map-get($colors, "text");
+    box-shadow: 5px 2px; /* Adjust the size of the icon if needed */
+  }
+
+  &__text {
+    font-size: 9px;
     color: map-get($colors, "text");
-    flex-direction: column;
-    align-items: center;
-
-    &__circle {
-        width: 50px;            /* Width of the circle */
-        height: 50px;           /* Height of the circle */
-        background-color: white; /* Background color of the circle */
-        border-radius: 50%;     /* Makes the shape a circle */
-        display: flex;          /* Enables flexbox */
-        justify-content: center; /* Centers content horizontally */
-        align-items: center;    /* Centers content vertically */        /* Sets the color of the icon */
-        font-size: 24px;  
-        border: solid 2px map-get($colors, "text"); 
-        box-shadow: 5px 2px;     /* Adjust the size of the icon if needed */
-    }
-
-    &__text{
-        color: map-get($colors, "text");
     font-weight: 600;
-    }
-
+  }
 }
-
-
