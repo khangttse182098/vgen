@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import authorHau from "../../../../../public/img/authorHau.jpg";
-import examPic from "../../../../../public/img/bài viết mới mẫu 7.jpg";
+import examPic from "../../../../../public/img/normalPost.jpg";
 import style from "./index.module.scss";
 import { useState } from "react";
 
@@ -41,7 +41,7 @@ const Post = () => {
             <div className={`${style["container__content__author__name"]}`}>
               <div>M Hau Nguyen</div>
               <div className={`${style["container__content__author__date"]}`}>
-                05 Thg 6  
+                05 Thg 6
               </div>
             </div>
           </div>
