@@ -63,6 +63,9 @@
       background-color: map-get($colors, "primary");
       border: none;
       font-weight: 700;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

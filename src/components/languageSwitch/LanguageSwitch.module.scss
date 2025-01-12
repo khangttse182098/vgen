@@ -1,0 +1,114 @@
+.container {
+  &__select {
+    gap: 5px;
+    display: flex;
+    width: 90px;
+    &:hover {
+      background-color: rgb(245, 245, 245);
+      cursor: pointer;
+    }
+
+    &__image {
+      width: 30px;
+      height: 25px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__text {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__arrow {
+      rotate: 90deg;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__options {
+    position: relative;
+
+    &__select {
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      width: 140px;
+      height: 100px;
+      z-index: 1;
+      top: 5px;
+      right: -3px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 5px 5px 5px #94a3b8;
+      display: none;
+      &--visible {
+        display: block;
+      }
+
+      &__option1 {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+        &:hover {
+          // cursor: pointer;
+          background-color: #e8f7fd;
+        }
+        &__img {
+          width: 40px;
+          height: 30px;
+          cursor: pointer;
+        }
+
+        &__text {
+          cursor: pointer;
+        }
+
+        &__arrow {
+          rotate: 90deg;
+          cursor: pointer;
+        }
+      }
+
+      &__option2 {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        align-items: center;
+        margin-top: 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: #e8f7fd;
+        }
+
+        &__img {
+          width: 39px;
+          height: 30px;
+          cursor: pointer;
+        }
+
+        &__text {
+          cursor: pointer;
+        }
+
+        &__arrow {
+          rotate: 90deg;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  &__options {
+    display: block;
+  }
+}

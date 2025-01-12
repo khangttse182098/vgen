@@ -1,8 +1,9 @@
 import Link from "next/link";
-import style from "./Header.module.scss";
-import { BiSearch } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
+import { BiSearch } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import style from "./Header.module.scss";
+import LanguageSwitch from "../languageSwitch/LanguageSwitch";
 
 const Header = () => {
   return (
@@ -21,6 +22,7 @@ const Header = () => {
         <Link href="/du-an-giao-duc">Dự án giáo dục</Link>
       </ul>
       <ul className={`${style["header__button"]}`}>
+        <LanguageSwitch />
         <Link href="#">
           <BiSearch size={20} />
         </Link>

@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import style from "./page.module.scss";
 import Image from "next/image";
 import loginImage from "../../../public/img/login.png";
+import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
+  const router = useRouter();
+  const handleLogin = () => {
+    router.push("/bai-viet");
+  };
+
   return (
     <div className={`${style["login__container"]}`}>
       <div className={`${style["login__image"]}`}>
@@ -30,7 +37,12 @@ const LoginPage = () => {
             placeholder="Nhập mật khẩu"
           />
         </div>
-        <button className={`${style["login__input__button"]}`}>Login</button>
+        <button
+          className={`${style["login__input__button"]}`}
+          onClick={handleLogin}
+        >
+          Login
+        </button>
       </div>
     </div>
   );
