@@ -5,6 +5,10 @@ import NormalPostList from "./components/normalPostList/NormalPostList";
 import PopularAuthorList from "./components/popularAuthorList/PopularAuthorList";
 import TopicList from "./components/topicList/TopicList";
 
+export const metadata = {
+  title: "Bài viết",
+  description: "V.Gen Network for Vietnam",
+};
 const PostPage = () => {
   return (
     <div>
