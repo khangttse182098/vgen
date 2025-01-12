@@ -3,23 +3,31 @@ import style from "./PopularPost.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { CiHeart } from "react-icons/ci";
 
-type TPopularPost = {
+export type TPopularPost = {
+  id: string;
   postImg: StaticImageData;
   authorImg: StaticImageData;
   title: string;
   name: string;
   date: string;
+  onSelectPost?: () => void;
 };
 
 const PopularPost = ({
+  id,
   postImg,
   authorImg,
   name,
   date,
   title,
+  onSelectPost,
 }: TPopularPost) => {
   return (
-    <div className={`${style["post__container"]}`}>
+    <div
+      className={`${style["post__container"]}`}
+      onClick={onSelectPost}
+      id={id}
+    >
       <div className={`${style["post__image"]}`}>
         <Image src={postImg} alt="post-img" />
       </div>

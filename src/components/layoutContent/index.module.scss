@@ -24,4 +24,30 @@
       border-radius: 10px;
     }
   }
+
+  &__container2 {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    gap: 12px;
+    padding: 30px 130px;
+
+    &__content3 {
+      flex: 8;
+      background-color: map-get($colors, "white");
+      box-shadow: $box-shadow-value;
+      height: auto;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    &__content4 {
+      flex: 2;
+      background-color: map-get($colors, "white");
+      box-shadow: $box-shadow-value;
+      height: auto;
+      padding: 12px;
+      border-radius: 10px;
+    }
+  }
 }
