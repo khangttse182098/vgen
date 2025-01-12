@@ -6,6 +6,10 @@
   background-color: #ffffff;
   border-bottom: 2px solid #ebebeb;
 
+  a {
+    cursor: pointer;
+  }
+
   &__brand {
     display: flex;
     align-items: center;

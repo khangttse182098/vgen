@@ -16,9 +16,9 @@ const Header = () => {
         </h1>
       </div>
       <ul className={`${style["header__tab"]}`}>
-        <Link href="#">Bài viết</Link>
-        <Link href="#">Giới thiệu</Link>
-        <Link href="#">Dự án giáo dục</Link>
+        <Link href="/bai-viet">Bài viết</Link>
+        <Link href="/">Giới thiệu</Link>
+        <Link href="/du-an-giao-duc">Dự án giáo dục</Link>
       </ul>
       <ul className={`${style["header__button"]}`}>
         <Link href="#">
