@@ -88,11 +88,11 @@ function LanguageSwitch() {
             >
               VIE
             </div>
-            <div
+            {/* <div
               className={`${style["container__options__select__option1__arrow"]}`}
             >
               {">"}
-            </div>
+            </div> */}
           </div>
 
           {/* English Option */}
@@ -109,11 +109,6 @@ function LanguageSwitch() {
               className={`${style["container__options__select__option2__text"]}`}
             >
               ENG
-            </span>
-            <span
-              className={`${style["container__options__select__option2__arrow"]}`}
-            >
-              {">"}
             </span>
           </div>
         </div>

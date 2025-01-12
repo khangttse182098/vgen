@@ -4,8 +4,10 @@ import { BiSearch } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import style from "./Header.module.scss";
 import LanguageSwitch from "../languageSwitch/LanguageSwitch";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("Header");
   return (
     <nav className={`${style["header"]}`}>
       <div className={`${style["header__brand"]}`}>
@@ -17,9 +19,9 @@ const Header = () => {
         </h1>
       </div>
       <ul className={`${style["header__tab"]}`}>
-        <Link href="/bai-viet">Bài viết</Link>
-        <Link href="/">Giới thiệu</Link>
-        <Link href="/du-an-giao-duc">Dự án giáo dục</Link>
+        <Link href="/bai-viet">{t("post")}</Link>
+        <Link href="/">{t("introduction")}</Link>
+        <Link href="/du-an-giao-duc">{t("eduPlan")}</Link>
       </ul>
       <ul className={`${style["header__button"]}`}>
         <LanguageSwitch />

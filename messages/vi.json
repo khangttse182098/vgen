@@ -1,5 +1,22 @@
 {
   "EduPlanPage": {
     "eduPlan": "Các dự án giáo dục"
+  },
+  "Header": {
+    "post": "Bài viết",
+    "introduction": "Giới thiệu",
+    "eduPlan": "Các dự án giáo dục"
+  },
+  "LandingPage": {
+    "login": "Đăng nhập",
+    "moreInfo": "Tìm hiểu thêm"
+  },
+  "LoginPage": {
+    "login": "Đăng nhập",
+    "enterInfo": "Nhập thông tin của bạn để đăng nhập",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "EnterUser": "Nhập tên đăng nhập",
+    "EnterPass": "Nhập mật khẩu"
   }
 }

@@ -6,8 +6,10 @@ import VGenMembers from "../../../public/img/VGenMembers.jpg";
 import style from "./LandingPage.module.scss";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const LandingPage = () => {
+  const t = useTranslations("LandingPage");
   const router = useRouter();
   const handleClick = () => {
     router.push("/dang-nhap");
@@ -49,12 +51,12 @@ const LandingPage = () => {
                   className={`${style["landingpage__container__left__content__btn__login"]}`}
                   onClick={handleClick}
                 >
-                  Đăng nhập
+                  {t("login")}
                 </button>
                 <button
                   className={`${style["landingpage__container__left__content__btn__findMore"]}`}
                 >
-                  Tìm hiểu thêm &nbsp;
+                  {t("moreInfo")} &nbsp;
                   <MdOutlineArrowForwardIos />
                 </button>
               </div>

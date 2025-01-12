@@ -1,5 +1,22 @@
 {
   "EduPlanPage": {
     "eduPlan": "Education Plans"
+  },
+  "Header": {
+    "post": "Post",
+    "introduction": "Introduction",
+    "eduPlan": "Education Plans"
+  },
+  "LandingPage": {
+    "login": "Login",
+    "moreInfo": "More Information"
+  },
+  "LoginPage": {
+    "login": "Login",
+    "enterInfo": "Enter your information to login",
+    "username": "Username",
+    "password": "Password",
+    "EnterUser": "Enter username",
+    "EnterPass": "Enter password"
   }
 }

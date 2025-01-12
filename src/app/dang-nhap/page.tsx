@@ -4,8 +4,10 @@ import style from "./page.module.scss";
 import Image from "next/image";
 import loginImage from "../../../public/img/login.png";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const LoginPage = () => {
+  const t = useTranslations("LoginPage");
   const router = useRouter();
   const handleLogin = () => {
     router.push("/bai-viet");
@@ -17,31 +19,33 @@ const LoginPage = () => {
         <Image src={loginImage} alt="login-image" />
       </div>
       <div className={`${style["login__info"]}`}>
-        <div className={`${style["login__title"]}`}>Login</div>
-        <div className={`${style["login__guide"]}`}>
-          Nhập thông tin của bạn để đăng nhập
-        </div>
+        <div className={`${style["login__title"]}`}>{t("login")}</div>
+        <div className={`${style["login__guide"]}`}>{t("enterInfo")}</div>
         <div className={`${style["login__input__wrapper"]}`}>
-          <label className={`${style["login__input__label"]}`}>Username</label>
+          <label className={`${style["login__input__label"]}`}>
+            {t("username")}
+          </label>
           <input
             className={`${style["login__input"]}`}
             type="text"
-            placeholder="Nhập tên người dùng"
+            placeholder={t("EnterUser")}
           />
         </div>
         <div className={`${style["login__input__wrapper"]}`}>
-          <label className={`${style["login__input__label"]}`}>Password</label>
+          <label className={`${style["login__input__label"]}`}>
+            {t("password")}
+          </label>
           <input
             className={`${style["login__input"]}`}
             type="password"
-            placeholder="Nhập mật khẩu"
+            placeholder={t("EnterPass")}
           />
         </div>
         <button
           className={`${style["login__input__button"]}`}
           onClick={handleLogin}
         >
-          Login
+          {t("login")}
         </button>
       </div>
     </div>
