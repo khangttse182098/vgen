@@ -1,10 +1,16 @@
 import { create } from "zustand";
 
-interface TState {}
+type DarkModeState = {
+  isDarkMode: boolean;
+};
 
-const useStore = create((set, get) => ({
-  // bears: 0,
-  // increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  // removeAllBears: () => set({ bears: 0 }),
-  // updateBears: (newBears) => set({ bears: newBears }),
+type DarkModeActions = {
+  toggleDarkMode: () => void;
+};
+
+const useDarkModeStore = create<DarkModeState & DarkModeActions>((set) => ({
+  isDarkMode: false,
+  toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
 }));
+
+export default useDarkModeStore;

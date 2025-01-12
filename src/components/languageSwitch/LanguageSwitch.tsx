@@ -11,15 +11,18 @@ function LanguageSwitch() {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
   useEffect(() => {
+    // Trả về toàn bộ cookies của web, phân tách bằng dấu ; => tìm cookie có key là language
     const storedLocale = document.cookie
+    // chia chuỗi cookies thành mảng chứa key-value
       .split("; ")
       .find((row) => row.startsWith("language="))
+      // Lấy ra value của cookie language
       ?.split("=")[1];
 
     if (storedLocale) {
       setLocale(storedLocale); // Cập nhật state nếu tìm thấy cookie
     }
-  }, [locale]);
+  }, []);
 
   const handleChange = (value: string) => {
     setLanguageValue(value); // Gọi hàm cập nhật ngôn ngữ
@@ -27,7 +30,6 @@ function LanguageSwitch() {
     console.log(locale);
 
     document.cookie = `language=${value}; path=/`; // Cập nhật cookie
-    window.location.reload(); // Tải lại trang để cập nhật ngôn ngữ
   };
 
   // Function to toggle the visibility of options
