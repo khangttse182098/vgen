@@ -28,12 +28,12 @@ const LayoutContent = ({
   // layout cho trang bài viết
   else if (layoutType === 2) {
     return (
-      <div className={`${style["layout__container"]}`}>
-        <div className={`${style["layout__container__content2"]}`}>
+      <div className={`${style["layout__container2"]}`}>
+        <div className={`${style["layout__container2__content3"]}`}>
           {content1}
         </div>
-        <div className={`${style["layout__container__content1"]}`}>
-          {content1}
+        <div className={`${style["layout__container2__content4"]}`}>
+          {content2}
         </div>
       </div>
     );
