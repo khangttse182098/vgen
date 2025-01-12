@@ -1,0 +1,91 @@
+.container {
+    padding: 10px 20px;
+    &__listPost {
+        &__detailPost {
+            margin: 20px 0;
+            display: flex;
+            gap: 25px;
+            &__image {
+                &__src {
+                    width: 600px;
+                    object-fit: cover;
+                    height: 143px;
+                }
+            }
+            &__content {
+
+                &__header {
+                    font-weight: bold;
+                }
+
+                
+                &__author {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &__detail {
+                        display: flex;
+                        gap: 10px;
+                        &__img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }
+
+                        &__info {
+                            display: flex;
+                            flex-direction: column;
+                            &__name {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    
+
+                    &__reaction {
+
+                        &__like {
+                            color: map-get($colors, "heart");
+                            stroke-width: 0.5;
+                        }
+    
+                        &__likeSuccess {
+                            color: map-get($colors, "heartActive");
+                            stroke-width: 0.5;
+                        }
+                        &__like,
+                        &__likeSuccess:hover {
+                            cursor: pointer;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        &__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &__src {
+                padding: 5px 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: map-get($colors, "white");
+                background-color: map-get($colors, "text");
+                border: 2px solid map-get($colors, "text"); /* Black border */
+                border-radius: 20px;
+                box-shadow: 5px 2px map-get($colors, "white"),
+                    5px 2px 0px 2px map-get($colors, "text"); /* Black border effect */ /* White glow with black outer shadow */
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &__src:active {
+              box-shadow: 0 0 15px 5px map-get($colors, "white"); /* Stronger glow on hover */
+              transform: translateY(3px);
+            }
+        }
+    }
+}
