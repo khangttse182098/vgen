@@ -6,7 +6,7 @@ interface DetailProps {
   };
 }
 
-function DetailPost({ params }: DetailProps) {
+function DetailPost({ params }: any) {
   return (
     <>
       <LayoutContent
