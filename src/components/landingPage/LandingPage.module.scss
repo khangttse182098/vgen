@@ -1,0 +1,150 @@
+.landingpage {
+  background-color: #ececec;
+  height: 100vh;
+  &__container {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 60px 0;
+    margin: 0 auto;
+    &__left {
+      position: relative;
+      left: 150px;
+      top: 100px;
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 20px;
+        &__word__1 {
+          position: relative;
+          display: inline-block;
+          color: map-get($colors, "white");
+          z-index: 2; // Ensure this is above &__word__2
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -16px; // Move background to the left
+            width: calc(100% + 20px); // Adjust width to maintain full coverage
+            height: 100%;
+            background-color: map-get($colors, "lightPurple");
+            transform: rotate(-10deg);
+            z-index: -1; // Background stays below the text of &__word__1
+            transform-origin: center;
+          }
+        }
+
+        &__word__2 {
+          position: relative;
+          display: inline-block;
+          color: map-get($colors, "white");
+          z-index: 1; // Ensure this is below &__word__1
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -5px; // Align background with the text
+            width: calc(100% + 10px); // Adjust width to maintain full coverage
+            height: 100%;
+            background-color: map-get($colors, "pink");
+            transform: rotate(10deg);
+            z-index: -2; // Background stays below &__word__1 and its background
+            transform-origin: center;
+          }
+        }
+
+        p {
+          margin-left: 10px;
+        }
+        &__btn {
+          display: flex;
+          gap: 30px;
+          margin-left: 70px;
+          &__login {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: map-get($colors, "text");
+            background-color: map-get($colors, "primary");
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+          }
+
+          &__findMore {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: map-get($colors, "text");
+            background-color: map-get($colors, "primary");
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    &__right {
+      margin-left: 300px;
+      position: relative;
+      right: 120px;
+      &__content {
+        width: 100%;
+
+        &__baseElement {
+          position: relative;
+
+          &__childElement1 {
+            position: absolute;
+            top: 15%;
+            right: -20%;
+            z-index: 2;
+            width: 100%;
+          }
+
+          &__childElement2 {
+            position: absolute;
+            top: 110%;
+            right: -1%;
+            z-index: 3;
+            width: 100%;
+          }
+        }
+        &__stickerImg {
+          width: 60%;
+          height: 200px;
+          border-radius: 10px;
+          object-fit: cover;
+          right: 35%;
+          position: relative;
+          z-index: 3;
+        }
+
+        &__coinImg {
+          width: 80%;
+          height: 300px;
+          object-fit: cover;
+          right: -30%;
+          top: 10%;
+        }
+
+        &__memberImg {
+          width: 90%;
+          height: 250px;
+          border-radius: 10px;
+          object-fit: cover;
+          top: 10%;
+        }
+      }
+    }
+  }
+}

@@ -54,7 +54,7 @@
     }
     li {
       display: flex;
-      gap: 11;
+      gap: 11px;
     }
   }
   @include footer__section(contact);
