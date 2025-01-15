@@ -17,24 +17,22 @@ jobs:
         with:
           node-version: "20.18.1"
 
-      - name: Set up SSH agent
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
-      - name: Test SSH connectivity
+      - name: Create SSH private key file
         run: |
-          ssh -v root@64.225.52.191 exit
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_vgen
+          chmod 600 ~/.ssh/id_vgen  # Make sure the private key is not readable by others
 
       - name: Pull the latest code to VPS
         run: |
-          ssh root@64.225.52.191 'cd /var/www/vgen'
-          ssh root@64.225.52.191 'git reset --hard origin/main'
+          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'cd /var/www/vgen'
+          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'git reset --hard origin/main'
 
       - name: Build the project
         run: |
-          ssh root@64.225.52.191 'npm run build'
+          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'npm run build'
 
       - name: Re-run the process
         run: |
-          ssh root@64.225.52.191 'pm2 restart all'
-          ssh root@64.225.52.191 'pm2 save'
+          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'pm2 restart all'
+          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'pm2 save'
