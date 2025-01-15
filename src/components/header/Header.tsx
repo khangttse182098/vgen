@@ -1,10 +1,11 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import style from "./Header.module.scss";
 import LanguageSwitch from "../languageSwitch/LanguageSwitch";
-import { useTranslations } from "next-intl";
+import style from "./Header.module.scss";
+import ButtonDarkMode from "../buttonDarkMode/ButtonDarkMode";
 
 const Header = () => {
   const t = useTranslations("Header");
@@ -25,6 +26,7 @@ const Header = () => {
       </ul>
       <ul className={`${style["header__button"]}`}>
         <LanguageSwitch />
+        <ButtonDarkMode />
         <Link href="#">
           <BiSearch size={20} />
         </Link>

@@ -1,0 +1,40 @@
+.container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  width: auto;
+
+  &__icon {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  &__dark {
+    opacity: 1;
+    transform: rotate(-90deg);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__light {
+    opacity: 1;
+    transform: rotate(90deg);
+    color: map-get($colors, "lightMode");
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__dark-exit {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  &__light-exit {
+    opacity: 0;
+    transform: rotate(-90deg);
+    color: map-get($colors, "lightMode");
+  }
+}
