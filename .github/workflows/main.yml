@@ -21,6 +21,9 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
+      - name: Test SSH connectivity
+        run: |
+          ssh -v root@64.225.52.191 exit
 
       - name: Pull the latest code to VPS
         run: |
