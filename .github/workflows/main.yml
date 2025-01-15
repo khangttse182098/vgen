@@ -29,4 +29,4 @@ jobs:
 
       - name: Re-run the process
         run: |
-          ssh root@64.225.52.191 'sudo ln -s /root/.nvm/versions/node/v20.18.1/bin/pm2 /usr/local/bin/pm2 && pm2 restart all && pm2 save'
+          ssh root@64.225.52.191 'pm2 restart all && pm2 save'
