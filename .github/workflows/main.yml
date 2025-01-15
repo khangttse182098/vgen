@@ -25,7 +25,7 @@ jobs:
 
       - name: Build the project
         run: |
-          ssh root@64.225.52.191 'sudo ln -s /root/.nvm/versions/node/v20.18.1/bin/npm /usr/local/bin/npm && sudo ln -s /root/.nvm/versions/node/v20.18.1/bin/node /usr/local/bin/node && cd /var/www/vgen && /root/.nvm/versions/node/v20.18.1/bin/npm run build'
+          ssh root@64.225.52.191 cd /var/www/vgen && /root/.nvm/versions/node/v20.18.1/bin/npm run build'
 
       - name: Re-run the process
         run: |
