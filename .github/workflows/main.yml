@@ -9,44 +9,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install Node.js and npm
       - name: Install Node.js and npm
         uses: actions/setup-node@v2
         with:
           node-version: "20.18.1"
 
-      # Step 3: Set up SSH agent
       - name: Set up SSH agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_CISCO }}
 
-      # Step 4: Debug SSH agent to ensure key is loaded
-      - name: Debug SSH agent
+      - name: Add VPS host key to known_hosts
         run: |
-          ssh-add -L  # This should list the loaded keys
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 64.225.52.191 >> ~/.ssh/known_hosts
 
-      # Step 5: Test SSH connection (without executing any commands yet)
-      - name: Test SSH connectivity
-        run: |
-          ssh -v root@64.225.52.191 exit
-
-      # Step 6: Pull the latest code to VPS
       - name: Pull the latest code to VPS
         run: |
           ssh root@64.225.52.191 'cd /var/www/vgen'
           ssh root@64.225.52.191 'git reset --hard origin/main'
 
-      # Step 7: Build the project
       - name: Build the project
         run: |
           ssh root@64.225.52.191 'npm run build'
 
-      # Step 8: Restart PM2 and save
       - name: Re-run the process
         run: |
           ssh root@64.225.52.191 'pm2 restart all'
