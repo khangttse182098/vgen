@@ -29,12 +29,11 @@ jobs:
 
       - name: Pull the latest code to VPS
         run: |
-          ssh root@64.225.52.191 'cd /var/www/vgen'
-          ssh root@64.225.52.191 'git reset --hard origin/main'
+          ssh root@64.225.52.191 'cd /var/www/vgen && git reset --hard origin/main'
 
       - name: Build the project
         run: |
-          ssh root@64.225.52.191 'npm run build'
+          ssh root@64.225.52.191 'cd /var/www/vgen && npm run build'
 
       - name: Re-run the process
         run: |
