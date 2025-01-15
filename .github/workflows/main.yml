@@ -33,7 +33,7 @@ jobs:
 
       - name: Build the project
         run: |
-          ssh root@64.225.52.191 'source ~/.bashrc && cd /var/www/vgen && npm run build'
+          ssh root@64.225.52.191 'cd /var/www/vgen && /root/.nvm/versions/node/v20.18.1/bin/npm run build'
 
       - name: Re-run the process
         run: |
