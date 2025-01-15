@@ -9,22 +9,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Create SSH private key file
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_CISCO }}" > ~/.ssh/id_vgen
-          chmod 600 ~/.ssh/id_vgen  # Make sure the private key is not readable by others
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
+      # Step 2: Install Node.js and npm
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20.18.1"
+
+      # Step 3: Set up SSH agent
+      - name: Set up SSH agent
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_CISCO }}
+
+      # Step 4: Debug SSH agent to ensure key is loaded
+      - name: Debug SSH agent
+        run: |
+          ssh-add -L  # This should list the loaded keys
+
+      # Step 5: Test SSH connection (without executing any commands yet)
+      - name: Test SSH connectivity
+        run: |
+          ssh -v root@64.225.52.191 exit
+
+      # Step 6: Pull the latest code to VPS
       - name: Pull the latest code to VPS
         run: |
-          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'cd /var/www/vgen'
-          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'git reset --hard origin/main'
+          ssh root@64.225.52.191 'cd /var/www/vgen'
+          ssh root@64.225.52.191 'git reset --hard origin/main'
 
+      # Step 7: Build the project
       - name: Build the project
         run: |
-          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'npm run build'
+          ssh root@64.225.52.191 'npm run build'
 
+      # Step 8: Restart PM2 and save
       - name: Re-run the process
         run: |
-          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'pm2 restart all'
-          ssh -i ~/.ssh/id_vgen root@64.225.52.191 'pm2 save'
+          ssh root@64.225.52.191 'pm2 restart all'
+          ssh root@64.225.52.191 'pm2 save'
