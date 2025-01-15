@@ -12,7 +12,7 @@ jobs:
       - name: Create SSH private key file
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_vgen
+          echo "${{ secrets.SSH_CISCO }}" > ~/.ssh/id_vgen
           chmod 600 ~/.ssh/id_vgen  # Make sure the private key is not readable by others
 
       - name: Pull the latest code to VPS
