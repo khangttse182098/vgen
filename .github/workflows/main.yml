@@ -17,6 +17,7 @@ jobs:
       - name: Add VPS host key to known_hosts
         run: |
           mkdir -p ~/.ssh
+          echo ${{secrets.SSH_IP}}
           ssh-keyscan -H ${{secrets.SSH_IP}} >> ~/.ssh/known_hosts
 
       - name: Pull the latest code to VPS
